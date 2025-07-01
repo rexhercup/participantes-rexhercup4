@@ -566,18 +566,6 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-					<tr>
-                        <td class="titleTD">FM</td>
-                        <td>Uber Gracia, Hugo</td>
-                        <td>2305</td>
-                        <td class="tramo-data"></td>
-                        <td class="categoria-data">Sub16</td>
-                        <td class="nick-data nickClickable">EvaMariaIoc</td>
-                        <td class="info-cell-wrapper">
-                            <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
-                            <div class="info-popup"></div>
-                        </td>
-                    </tr>
                     <tr>
                         <td class="titleTD">FM</td>
                         <td>Valle Luis, Leo</td>
@@ -585,6 +573,18 @@
                         <td class="tramo-data"></td>
                         <td class="categoria-data">Sub18</td>
                         <td class="nick-data nickClickable">Lvluis10</td>
+                        <td class="info-cell-wrapper">
+                            <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
+                            <div class="info-popup"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titleTD">FM</td>
+                        <td>Uber Gracia, Hugo</td>
+                        <td>2297</td>
+                        <td class="tramo-data"></td>
+                        <td class="categoria-data">Sub16</td>
+                        <td class="nick-data nickClickable">EvaMariaIoc</td>
                         <td class="info-cell-wrapper">
                             <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
                             <div class="info-popup"></div>
@@ -615,6 +615,18 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="titleTD"></td>
+                        <td>Silva Cerda, Mark Valentin</td>
+                        <td>2215</td>
+                        <td class="tramo-data"></td>
+                        <td class="categoria-data">Sub16</td>
+                        <td class="nick-data nickClickable">Redmark12</td>
+                        <td class="info-cell-wrapper">
+                            <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
+                            <div class="info-popup"></div>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="titleTD">CM</td>
                         <td>Asensio Ramos, Fernando</td>
                         <td>2200</td>
@@ -628,20 +640,8 @@
                     </tr>    
                     <tr>
                         <td class="titleTD"></td>
-                        <td>Silva Cerda, Mark Valentin</td>
-                        <td>2195</td>
-                        <td class="tramo-data"></td>
-                        <td class="categoria-data">Sub16</td>
-                        <td class="nick-data nickClickable">Redmark12</td>
-                        <td class="info-cell-wrapper">
-                            <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
-                            <div class="info-popup"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="titleTD"></td>
                         <td>Cano Sevilla, Ivan</td>
-                        <td>2177</td>
+                        <td>2178</td>
                         <td class="tramo-data"></td>
                         <td class="categoria-data"></td>
                         <td class="nick-data nickClickable">Pistolerodeleclipse</td>
@@ -653,7 +653,7 @@
                     <tr>
                         <td class="titleTD"></td>
                         <td>Atares Buisan, Sergio</td>
-                        <td>2174</td>
+                        <td>2170</td>
                         <td class="tramo-data"></td>
                         <td class="categoria-data">Sub16</td>
                         <td class="nick-data nickClickable">Sergiogalaxias</td>
@@ -700,18 +700,6 @@
                     </tr>
                     <tr>
                         <td class="titleTD"></td>
-                        <td>Sierra Lopez, Yeray</td>
-                        <td>2061</td>
-                        <td class="tramo-data">U2100</td>
-                        <td class="categoria-data">Sub18</td>
-                        <td class="nick-data nickClickable">chesszynx</td>
-                        <td class="info-cell-wrapper">
-                            <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
-                            <div class="info-popup"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="titleTD"></td>
                         <td>Martin Ramos, Hector</td>
                         <td>2021</td>
                         <td class="tramo-data">U2100</td>
@@ -748,8 +736,20 @@
                     </tr>
                     <tr>
                         <td class="titleTD"></td>
+                        <td>Sierra Lopez, Yeray</td>
+                        <td>2012</td>
+                        <td class="tramo-data">U2100</td>
+                        <td class="categoria-data">Sub18</td>
+                        <td class="nick-data nickClickable">chesszynx</td>
+                        <td class="info-cell-wrapper">
+                            <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
+                            <div class="info-popup"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titleTD"></td>
                         <td>Iravedra Iankov, Francisco</td>
-                        <td>1963</td>
+                        <td>1965</td>
                         <td class="tramo-data">U2100</td>
                         <td class="categoria-data">Sub18</td>
                         <td class="nick-data nickClickable">DestruyoTusTacticas</td>
@@ -862,6 +862,21 @@
             }
 
             document.getElementById('resultado').innerHTML = textoResultado;
+        }
+
+        function sumaELOs() {
+            const tabla = document.getElementById('mainTable');
+            const filas = tabla.getElementsByTagName('tr');
+            let sum = 0;
+
+            for (let i = 0; i < filas.length-1; i++) {
+                const celdas = filas[i].getElementsByTagName('td');
+                if (celdas.length > 1) {   // Verifica si hay al menos dos celdas
+                    sum += parseInt(celdas[2].textContent);
+                }
+            }
+
+            console.log(sum);
         }
 
         var nicks = document.getElementsByClassName("nickClickable");
