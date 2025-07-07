@@ -1037,7 +1037,7 @@
                     <tr>
                         <td class="titleTD"></td>
                         <td>Gimillo Bonaque, Jaime</td>
-                        <td></td>
+                        <td>0</td>
                         <td class="tramo-data">U1900</td>
                         <td class="categoria-data"></td>
                         <td class="nick-data nickClickable">Gimigimi</td>
@@ -1073,7 +1073,7 @@
             const filas = tabla.getElementsByTagName('tr');
             let sum = 0;
 
-            for (let i = 0; i < filas.length-1; i++) {
+            for (let i = 0; i < filas.length; i++) {
                 const celdas = filas[i].getElementsByTagName('td');
                 if (celdas.length > 1) {   // Verifica si hay al menos dos celdas
                     sum += parseInt(celdas[2].textContent);
