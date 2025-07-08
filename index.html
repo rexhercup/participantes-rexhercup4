@@ -246,6 +246,22 @@
                 white-space: nowrap; /* Prevent text wrapping inside popup */
                 text-align: left;
             }
+            
+            #mainTable td:nth-child(3) a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .flag-img {
+                height: 1em;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .flagTD {
+                text-align: center;
+                vertical-align: middle;
+            }
 
 
             @media screen and (max-width: 1200px) {
@@ -261,25 +277,31 @@
                 
             }
 
-            @media screen and (max-width: 1000px) {
-                .main_body{
-                    font-size: 22px;
+            @media screen and (max-width: 1100px) {
+                .main_table th:nth-child(6), /* Tramo */
+                .main_table td:nth-child(5),
+                .main_table th:nth-child(7), /* Categoría */
+                .main_table td:nth-child(6),
+                .main_table th:nth-child(8), /* Nick */
+                .main_table td:nth-child(7) {
+                    display: none;
                 }
+
+                .main_table th.info-header,
+                .main_table td.info-cell-wrapper {
+                    display: table-cell;
+                }
+            }
+
+            @media screen and (max-width: 1000px) {
                 #ranking_ini_title {
                     font-size: 40px;
                 }
             }
-            @media screen and (max-width: 900px) {
-                .main_body{
-                    font-size: 20px;
-                }
-            }
+
             @media screen and (max-width: 800px) {
                 .navbar_item {
                     font-size: 20px;
-                }
-                .main_body{
-                    font-size: 18px;
                 }
                 .main_title{
                     font-size: 70px;
@@ -292,19 +314,6 @@
                 }
             }
             @media screen and (max-width: 760px) {
-                .main_table th:nth-child(5), /* Tramo */
-                .main_table td:nth-child(4),
-                .main_table th:nth-child(6), /* Categoría */
-                .main_table td:nth-child(5),
-                .main_table th:nth-child(7), /* Nick */
-                .main_table td:nth-child(6) {
-                    display: none;
-                }
-
-                .main_table th.info-header,
-                .main_table td.info-cell-wrapper {
-                    display: table-cell;
-                }
                 .main_body{
                     font-size: 25px;
                 }
@@ -335,13 +344,16 @@
                 .img_logo{
                     height: 50px;
                 }
+                .main_body{
+                    font-size: 22px;
+                }
             }
             @media screen and (max-width: 600px) {
                 .navbar_item {
                     font-size: 14px;
                 }
                 .main_body{
-                    font-size: 23px;
+                    font-size: 20px;
                 }
                 .main_title{
                     font-size: 50px;
@@ -355,6 +367,11 @@
                 #ranking_ini_title {
                     margin-bottom: 20px;
                     font-size: 30px;
+                }
+            }
+            @media screen and (max-width: 525px) {
+                .main_body{
+                    font-size: 18px;
                 }
             }
             @media screen and (max-width: 500px) {
@@ -377,22 +394,25 @@
                     margin-top: 100px;
                 }
                 .main_body{
-                    font-size: 20px;
+                    font-size: 16px;
+                }
+                .main_table th, .main_table td {
+                    padding: 4px;  /* O menos */
                 }
             }
 
             @media screen and (max-width: 450px) {
                 .main_body{
-                    font-size: 18px;
+                    font-size: 15px;
+                }
+                .main_table th, .main_table td {
+                    padding: 3px;  /* O menos */
                 }
             }
 
             @media screen and (max-width: 425px) {
                 .navbar_item {
                     font-size: 11px;
-                }
-                .main_body {
-                    font-size: 17px;
                 }
                 .main_title {
                     font-size: 40px;
@@ -416,17 +436,23 @@
                 #ranking_ini_title {
                     font-size: 23px;
                 }
+                .main_table th, .main_table td {
+                    padding: 2px;  /* O menos */
+                }
             }
 
             @media screen and (max-width: 370px) {
                 .main_body {
-                    font-size: 15px;
+                    font-size: 14px;
                 }
             }
 
             @media screen and (max-width: 350px) {
                 .main_body{
-                    font-size: 14px;
+                    font-size: 13px;
+                }
+                .main_table th, .main_table td {
+                    padding: 1px;  /* O menos */
                 }
                 .img_logo{
                     height: 35px;
@@ -485,7 +511,8 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Título</th>
+                        <th></th>
+                        <th></th>
                         <th>Nombre</th>
                         <th>FIDE</th>
                         <th>Tramo</th>
@@ -494,7 +521,8 @@
                         <th class="info-header">Info</th> </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr data-fide="3803457">
+                        <td class="flagTD"><img class="flag-img" src="flags/per.png"></td>
                         <td class="titleTD">IM</td>
                         <td>Terry, Renato</td>
                         <td>2508</td>
@@ -506,7 +534,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="3503313">
+                        <td class="flagTD"><img class="flag-img" src="flags/cub.png"></td>
                         <td class="titleTD">GM</td>
                         <td>Almeida Quintana, Omar</td>
                         <td>2501</td>
@@ -518,7 +547,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="3503631">
+                        <td class="flagTD"><img class="flag-img" src="flags/par.png"></td>
                         <td class="titleTD">GM</td>
                         <td>Delgado Ramirez, Neuris</td>
                         <td>2482</td>
@@ -530,7 +560,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24521060">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">IM</td>
                         <td>Alonso Garcia, Aaron</td>
                         <td>2458</td>
@@ -542,7 +573,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24524689">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">IM</td>
                         <td>Habans Aguerrea, Javier</td>
                         <td>2448</td>
@@ -554,7 +586,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="5101174">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">GM</td>
                         <td>Gonzalez Garcia, Jose</td>
                         <td>2447</td>
@@ -566,7 +599,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="3400042">
+                        <td class="flagTD"><img class="flag-img" src="flags/chi.png"></td>
                         <td class="titleTD">GM</td>
                         <td>Vasquez Schroeder, Rodrigo</td>
                         <td>2446</td>
@@ -578,7 +612,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="22245570">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">IM</td>
                         <td>Domingo Nunez, Ruben</td>
                         <td>2435</td>
@@ -590,7 +625,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24544418">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Del Prado Rodriguez, Xulio</td>
                         <td>2391</td>
@@ -602,7 +638,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-					<tr>
+					<tr data-fide="54541042">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Cacheiro Blanco, Diego</td>
                         <td>2383</td>
@@ -614,7 +651,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54559774">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Sierra Vallina, Lionel</td>
                         <td>2382</td>
@@ -626,7 +664,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="3903699">
+                        <td class="flagTD"><img class="flag-img" src="flags/ven.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Marquez Ruiz, Angel Jesus</td>
                         <td>2365</td>
@@ -638,7 +677,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="3530744">
+                        <td class="flagTD"><img class="flag-img" src="flags/cub.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Azahares Serrano, Raymond Daniel</td>
                         <td>2358</td>
@@ -650,7 +690,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54549264">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Rey Martinez, Jaime</td>
                         <td>2340</td>
@@ -662,7 +703,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24597716">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Salinas Tomas, Daniel</td>
                         <td>2334</td>
@@ -674,7 +716,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="22245049">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Ruperez Benito, Antonio</td>
                         <td>2328</td>
@@ -686,7 +729,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54507669">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Iglesias Ferreira, Andres</td>
                         <td>2308</td>
@@ -698,7 +742,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54577187">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Valle Luis, Leo</td>
                         <td>2301</td>
@@ -710,7 +755,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54720079">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Uber Gracia, Hugo</td>
                         <td>2297</td>
@@ -722,7 +768,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54516196">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Galstyan, David</td>
                         <td>2284</td>
@@ -734,7 +781,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24560952">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">CM</td>
                         <td>Ermachenko, Manuel</td>
                         <td>2277</td>
@@ -746,7 +794,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24577448">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Marrero Rodriguez, Jorge</td>
                         <td>2259</td>
@@ -758,7 +807,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24538256">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">FM</td>
                         <td>Aguado Doncel, Pablo Luis</td>
                         <td>2250</td>
@@ -770,7 +820,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="94723290">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Silva Cerda, Mark Valentin</td>
                         <td>2215</td>
@@ -782,7 +833,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54559480">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Martin Cabeza, Nicolas</td>
                         <td>2206</td>
@@ -794,7 +846,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="2214172">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">CM</td>
                         <td>Asensio Ramos, Fernando</td>
                         <td>2200</td>
@@ -806,7 +859,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24593656">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Cernadas Camean, David</td>
                         <td>2181</td>
@@ -818,7 +872,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr> 
-                    <tr>
+                    <tr data-fide="32043546">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Cano Sevilla, Ivan</td>
                         <td>2178</td>
@@ -830,7 +885,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54731810">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Atares Buisan, Sergio</td>
                         <td>2170</td>
@@ -842,7 +898,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54727308">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">CM</td>
                         <td>Ruiz Vazquez, Javier</td>
                         <td>2157</td>
@@ -854,7 +911,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="32070934">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">WFM</td>
                         <td>Jimenez Fernandez, Rebeca</td>
                         <td>2154</td>
@@ -866,7 +924,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54705193">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Montes Molina, Ivan</td>
                         <td>2147</td>
@@ -878,7 +937,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54707668">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Lozano Casasayas, Marc</td>
                         <td>2122</td>
@@ -890,7 +950,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="32067267">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Gonzalez Alonso, Marti</td>
                         <td>2099</td>
@@ -902,7 +963,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54521866">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Mangues Rubia, Oriol</td>
                         <td>2073</td>
@@ -914,7 +976,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24599166">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Fernandez Climent, Albert</td>
                         <td>2047</td>
@@ -926,7 +989,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24547760">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Martin Ramos, Hector</td>
                         <td>2021</td>
@@ -938,7 +1002,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24597481">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Benseny Martinez, Guerau</td>
                         <td>2017</td>
@@ -950,7 +1015,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24526150">
+                        <td class="flagTD"><img class="flag-img" src="flags/ecu.png"></td>
                         <td class="titleTD"></td>
                         <td>Badillo Ramos, Steve</td>
                         <td>2016</td>
@@ -962,7 +1028,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54588154">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Sierra Lopez, Yeray</td>
                         <td>2012</td>
@@ -974,7 +1041,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24585289">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD">WCM</td>
                         <td>De Lomas Busquets, Alba</td>
                         <td>1997</td>
@@ -986,7 +1054,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24534820">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Candela Martin, Alvaro</td>
                         <td>1996</td>
@@ -998,7 +1067,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="24550540">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Iravedra Iankov, Francisco</td>
                         <td>1965</td>
@@ -1010,7 +1080,21 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="22733663">
+                        <td class="flagTD"><img class="flag-img" src="flags/bra.png"></td>
+                        <td class="titleTD"></td>
+                        <td>Lazzarotti, Calebe Kadlubiski</td>
+                        <td>1942</td>
+                        <td class="tramo-data">U2100</td>
+                        <td class="categoria-data">Sub16</td>
+                        <td class="nick-data nickClickable">calebeklazzarotti</td>
+                        <td class="info-cell-wrapper">
+                            <span class="material-symbols-outlined info-toggle" style="vertical-align: middle; cursor: pointer;" aria-hidden="true" role="presentation" data-icon="info"></span>
+                            <div class="info-popup"></div>
+                        </td>
+                    </tr>
+                    <tr data-fide="22214429">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Garcia Estruch, Jorge</td>
                         <td>1918</td>
@@ -1022,7 +1106,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54519004">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Del Rio Baena, Dani</td>
                         <td>1913</td>
@@ -1034,7 +1119,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="141410">
+                        <td class="flagTD"><img class="flag-img" src="flags/arg.png"></td>
                         <td class="titleTD"></td>
                         <td>Carrizo, Facundo</td>
                         <td>1911</td>
@@ -1046,7 +1132,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="535070838">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Kothakonda, Naga Bhavya Teja</td>
                         <td>1858</td>
@@ -1058,7 +1145,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="3981541">
+                        <td class="flagTD"><img class="flag-img" src="flags/ven.png"></td>
                         <td class="titleTD"></td>
                         <td>Ibarra Brito, Emilio</td>
                         <td>1833</td>
@@ -1070,7 +1158,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="94775389">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Romera Navia, Alberto</td>
                         <td>1831</td>
@@ -1082,7 +1171,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="54787793">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Sanchez Murcia, Daniel</td>
                         <td>1824</td>
@@ -1094,7 +1184,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="94738904">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Ksiri Crihana, Christian</td>
                         <td>1785</td>
@@ -1106,7 +1197,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="94737436">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Perez Bartolome, Alberto</td>
                         <td>1669</td>
@@ -1118,7 +1210,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="94745650">
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Vardanyan Aslanyan, Arman</td>
                         <td>1632</td>
@@ -1130,7 +1223,8 @@
                             <div class="info-popup"></div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fide="20039697">
+                        <td class="flagTD"><img class="flag-img" src="flags/arg.png"></td>
                         <td class="titleTD"></td>
                         <td>Forgione, Nicolas</td>
                         <td>1528</td>
@@ -1143,6 +1237,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="flagTD"><img class="flag-img" src="flags/esp.png"></td>
                         <td class="titleTD"></td>
                         <td>Gimillo Bonaque, Jaime</td>
                         <td>0</td>
@@ -1239,6 +1334,19 @@
 
                 if (popup.style.display === 'block' && !isClickInsidePopup && !isClickInsideToggle) {
                     popup.style.display = 'none';
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const rows = document.querySelectorAll("#mainTable tbody tr");
+            rows.forEach(row => {
+                const fideCode = row.dataset.fide;
+                if (fideCode) {
+                const nameCell = row.querySelector("td:nth-child(3)");
+                const playerName = nameCell.textContent.trim();
+                const fideUrl = `https://ratings.fide.com/profile/${fideCode}`;
+                nameCell.innerHTML = `<a href="${fideUrl}" target="_blank">${playerName}</a>`;
                 }
             });
         });
